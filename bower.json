@@ -1,12 +1,12 @@
 {
-    "name": "adapt-bgImages",
-    "repository": "git://github.com/LearnChamp/adapt-bgImages",
+    "name": "theme_xplode",
+    "repository": "git://github.com/ocerecedo/theme_xplode",
     "framework": ">=2.1",
     "version": "1.0.2",
-    "homepage": "https://github.com/LearnChamp/adapt-bgImages",
+    "homepage": "https://github.com/ocerecedo/theme_xplode",
     "issues": "",
-    "displayName": "bg Images",
-    "theme": "bg-images",
+    "displayName": "theme xplode",
+    "theme": "theme_xplode",
     "description": "",
     "main": "./js/bg-images.js",
     "keywords": [
