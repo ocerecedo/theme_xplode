@@ -1,0 +1,44 @@
+// **************************************************
+// ** background images
+// **************************************************
+// background images for the menu
+// right now there can only be one image 
+@bg-image-menu-landscape: 'assets/menu-m-l.png';
+@bg-image-menu-portrait: 'assets/menu-m-p.png';
+@bg-image-menu-small-landscape: 'assets/menu-s-l.png';
+@bg-image-menu-small-portrait: 'assets/menu-s-p.png';
+
+//  important the 4 lists MUST have the same lenbgth
+//  will create a css class: bg-image-<index>
+//  exampe: add 'bg-image-2' to a contentObjects _classes attribute to apply 'assets/img-b-m-l.png' as the background image ot this page.
+@bg-images-landscape: 
+	'assets/img-1-m-l.png',
+	'assets/img-2-m-l.png',
+	'assets/img-3-m-l.png',
+	'assets/img-4-m-l.png';
+
+@bg-images-portrait: 
+	'assets/img-1-m-p.png',
+	'assets/img-2-m-p.png',
+	'assets/img-3-m-p.png',
+	'assets/img-4-m-p.png';
+
+@bg-images-small-landscape: 
+	'assets/img-1-s-l.png',
+	'assets/img-2-s-l.png',
+	'assets/img-3-s-l.png',
+	'assets/img-4-s-l.png';
+
+@bg-images-small-portrait: 
+	'assets/img-1-s-p.png',
+	'assets/img-2-s-p.png',
+	'assets/img-3-s-p.png',
+	'assets/img-4-s-p.png';
+
+
+// **************************************************
+// ** window spacing
+// **************************************************
+// will create a css-class 'window-<space-value>'
+// example: add "window-50" to a blocks _class attribute to create a 50% space between 2 blocks
+@window-spacing: 10, 15, 20, 25, 33, 50, 75, 100;

@@ -1,0 +1,106 @@
+// Page styling
+// ============
+
+.page {
+    background-color: transparent;
+
+    &.hide-header {
+        .page-header {
+            display: none;
+        }
+    }
+    .page-header {
+        background-color: transparent;
+    }
+
+    .page-header-inner {
+        padding: @page-padding-top 0 @page-padding-bottom;
+
+        @media all and (max-width: (@device-width-large + 20px)) {
+            padding: 20px;
+        }
+
+        @media all and (max-width: (@device-width-small + 20px)) {
+            padding: 10px;
+        }
+    }
+
+    .page-header-content {
+        background-color: fade(@background-color-inverted, 100%);
+        background-color: @background-color-inverted;
+        padding: @page-padding-top 0 @page-padding-bottom;
+        max-width: @device-width-large;
+        margin: auto;
+        color: @foreground-color-inverted;
+    }
+
+    .page-header-content-inner {
+        padding-left: @item-padding-left;
+        padding-right: @item-padding-right;
+        text-align: center;
+    }
+
+    .page-title {
+        margin-bottom: @page-title-margin-bottom;
+    }
+
+    .page-body {
+        margin-bottom: @page-body-margin-bottom;
+    }
+
+    .page-instruction {
+        margin-bottom: @page-instruction-margin-bottom;
+        .instruction-text;
+    }
+
+    // ******************************
+    // ** make the bg-images
+    // ******************************
+    &:after {
+        content: ' ';
+        background-position: center;
+        background-size: cover;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        width: 100vw;
+        height: 120%;
+        height: 120vh;
+        transform: translate3d(0,0,0);
+        z-index: -1;
+    }
+
+  .bg-img-loop(length(@bg-images-landscape));
+  .bg-img-loop(@n, @i: 1) when (@i =< @n) {
+
+    @bg-img-land: extract(@bg-images-landscape, @i);
+    @bg-img-port: extract(@bg-images-portrait, @i);
+    @bg-img-small-land: extract(@bg-images-small-landscape, @i);
+    @bg-img-small-port: extract(@bg-images-small-portrait, @i);
+
+    // creata the css class
+    &.bg-image-@{i}:after {
+      
+      @media all and (orientation: landscape) {
+        background-image: url("@{bg-img-land}");
+      }
+      
+      @media all and (orientation: portrait) {
+        background-image: url("@{bg-img-port}");
+      }
+      
+      @media all and (max-width: (@device-width-medium)) and (orientation: landscape) {
+        background-image: url("@{bg-img-small-land}");
+      }
+      
+      @media all and (max-width: (@device-width-medium)) and (orientation: portrait) {
+        background-image: url("@{bg-img-small-port}");
+      }
+      
+    }
+
+    .bg-img-loop(@n, (@i + 1));
+  }
+
+}

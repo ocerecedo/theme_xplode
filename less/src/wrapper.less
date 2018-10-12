@@ -1,0 +1,46 @@
+// Layout
+// ======
+
+#wrapper {
+    width: 100%;
+    margin: auto;
+    overflow-x: hidden;
+    padding-top: (@navigation-padding * 2) + @icon-size;
+
+    .ie8 & {
+        max-width: @ie8-max-width;
+        margin: 0 auto;
+
+        #ie8-bg-elm {
+			top: 0;
+			margin: 0 auto;
+			width: 100%;
+			max-width: @ie8-max-width;
+			height: 100%;
+			position: fixed;
+			z-index: -1;
+			background-size: 100%;
+			background-repeat: no-repeat;
+			background-position: center;
+
+			&.menu {
+				background-image: url("@{bg-image-menu-landscape}")
+			}
+
+			.bg-img-loop(length(@bg-images-landscape));
+			.bg-img-loop(@n, @i: 1) when (@i =< @n) {
+
+				@bg-img-land: extract(@bg-images-landscape, @i);
+
+				// creata the css class
+				&.bg-image-@{i} {
+				    background-image: url("@{bg-img-land}");			      
+				}
+
+				.bg-img-loop(@n, (@i + 1));
+			}
+
+
+		}
+    }
+}
