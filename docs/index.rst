@@ -1,7 +1,6 @@
-This is a Title
+Introducción
 ===============
-That has a paragraph about a main subject and is set when the '='
-is at least the same length of the title itself.
+El siguiente documento tiene como finalidad guiarle en el proceso de actualización de los sitios de la Coordinación de Educación en Salud
  
 Subject Subtitle
 ----------------
